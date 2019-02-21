@@ -31,6 +31,7 @@ cbPalette <- c("#000000",
                 "#A9A9A9",
                 "#ADD8E6")
 
+#EPA RD Budget
 epa_rd_budget<- fed_rd %>% 
   filter(department == "EPA") %>% 
   ggplot(aes(x=year))+
@@ -44,7 +45,7 @@ epa_rd_budget<- fed_rd %>%
 epa_rd_budget
 
 
-
+#RD ALL DEPTS
 rd_gdp_all<- fed_rd %>% 
   ggplot(aes(x=year, y=rd_budget/gdp, color=department))+
   geom_line(size=0.5)+
@@ -54,9 +55,13 @@ rd_gdp_all<- fed_rd %>%
   ggtitle("US Government R&D Spending for All Departments")+
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
 
-#find distinct department names
+
+#RD SELECT DEPTS
+
+#distinct department names
 fed_rd %>% distinct(department)
-  
+
+
 department_subset <- fed_rd %>% 
   filter(department == "EPA" | department == "DOC" |
            department == "DOE" | department == "NSF" |
