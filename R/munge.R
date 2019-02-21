@@ -51,7 +51,8 @@ rd_gdp_all<- fed_rd %>%
   geom_line(size=0.5)+
   labs(x = "Year",
        y = "Percent R&D to GDP",
-       subtitle = "As Percent of GDP")+
+       subtitle = "As Percent of GDP",
+       color = "Department")+
   ggtitle("US Government R&D Spending for All Departments")+
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
 
